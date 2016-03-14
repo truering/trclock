@@ -33,6 +33,8 @@ public class MainActivity extends Activity {
     final DateFormat dfMin = new SimpleDateFormat("mm");
     final DateFormat dfSec = new SimpleDateFormat("ss");
 
+    final Object mLock = new Object();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +52,7 @@ public class MainActivity extends Activity {
             public void run() {
                 while (true) {
                     // 時刻取得(文字列)
-                    synchronized (mDay) {
+                    synchronized (mLock) {
                         // NTPで取得した時刻に調整
                         Date date = new Date(System.currentTimeMillis() + mDiffWithNtp);
 
@@ -122,7 +124,7 @@ public class MainActivity extends Activity {
      * 表示時刻更新
      */
     private void updateTime() {
-        synchronized (mDay) {
+        synchronized (mLock) {
             setDateText(R.id.txtMon, mMon);
             setDateText(R.id.txtDay, mDay);
             setDateText(R.id.txtHour, mHour);
@@ -135,7 +137,6 @@ public class MainActivity extends Activity {
      * TextViewへの文字列設定
      * @param id        リソースID
      * @param value     設定文字列
-     * @return
      */
     private void setDateText(int id, String value) {
         TextView txtView = (TextView) findViewById(id);
@@ -336,8 +337,8 @@ public class MainActivity extends Activity {
         layout = txtView.getLayoutParams();
         marginLayout = (ViewGroup.MarginLayoutParams)layout;
         txtView.setTextSize(TypedValue.COMPLEX_UNIT_PX, halfW * 0.65f);
-        marginLayout.topMargin = halfH - (int)(txtView.getTextSize() / 3f);
-        marginLayout.leftMargin = -(int)(txtView.getTextSize() / 5f);
+        marginLayout.topMargin = halfH - (int)(txtView.getTextSize() / 2f);
+        marginLayout.leftMargin = -(int)(txtView.getTextSize() / 4f);
         txtView.setLayoutParams(layout);
 
         ////////////////////////////////////////////////////////////////////////////////
