@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSepDay"
+        android:layout_gravity="left|bottom"
+        android:text="/"
+        android:textSize="230dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:background="#00ffffff"
+        android:textColor="#86b0b0b0"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/txtMon"
+        android:layout_alignEnd="@+id/txtMon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMon"
+        android:text="03"
+        android:textSize="140sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:background="#00ffffff"
+        android:layout_gravity="left|center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDay"
+        android:layout_gravity="left|top"
+        android:text="28"
+        android:textSize="210dp"
+        android:singleLine="true"
+        android:gravity="top|left"
+        android:foregroundGravity="top|left"
+        android:textStyle="bold"
+        android:background="#00ffffff"
+        android:layout_alignTop="@+id/txtSec"
+        android:layout_alignLeft="@+id/txtSepDay"
+        android:layout_alignStart="@+id/txtSepDay"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtHour"
+        android:text="12"
+        android:textSize="120dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:background="#00ffffff"
+        android:layout_gravity="left|center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/txtSepTime" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMin"
+        android:layout_gravity="left|bottom"
+        android:text="57"
+        android:textSize="130dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:background="#00ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSepTime"
+        android:layout_gravity="left|bottom"
+        android:text="："
+        android:textSize="130dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:background="#00ffffff"
+        android:textColor="#75aaaaaa"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/txtMin"
+        android:layout_alignLeft="@+id/txtSec"
+        android:layout_alignStart="@+id/txtSec" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00"
+        android:id="@+id/txtSec"
+        android:layout_gravity="right|bottom"
+        android:textSize="190dp"
+        android:textStyle="bold"
+        android:background="#00ffffff"
+        android:textColor="#FFFFFF"
+        android:foregroundGravity="fill_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
